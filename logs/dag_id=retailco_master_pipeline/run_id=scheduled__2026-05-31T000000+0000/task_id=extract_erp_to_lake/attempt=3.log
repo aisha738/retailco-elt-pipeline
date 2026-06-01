@@ -1,8 +1,0 @@
-[2026-06-01T05:25:52.023+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
-[2026-06-01T05:25:52.071+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retailco_master_pipeline.extract_erp_to_lake scheduled__2026-05-31T00:00:00+00:00 [queued]>
-[2026-06-01T05:25:52.080+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retailco_master_pipeline.extract_erp_to_lake scheduled__2026-05-31T00:00:00+00:00 [queued]>
-[2026-06-01T05:25:52.082+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
-[2026-06-01T05:25:52.100+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): extract_erp_to_lake> on 2026-05-31 00:00:00+00:00
-[2026-06-01T05:25:52.119+0000] {standard_task_runner.py:63} INFO - Started process 5092 to run task
-[2026-06-01T05:25:52.122+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'retailco_master_pipeline', 'extract_erp_to_lake', 'scheduled__2026-05-31T00:00:00+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/retailco_dag.py', '--cfg-path', '/tmp/tmpwqw1fo8t']
-[2026-06-01T05:25:52.126+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask extract_erp_to_lake
