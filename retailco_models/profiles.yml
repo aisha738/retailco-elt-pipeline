@@ -4,7 +4,7 @@ retailco_project:
       type: postgres
       threads: 1
       host: data-warehouse
-      port: 5432               
+      port: 5432
       user: dwh_admin
       pass: dwh_password
       dbname: retailco_dwh
