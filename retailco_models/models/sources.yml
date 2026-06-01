@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw_lake
+    schema: analytics # This is the dataset name we gave to dlt
+    tables:
+      - name: customers
+      - name: products
+      - name: stores
+      - name: employees
+      - name: payment_methods
+      - name: orders
+      - name: payments
+      - name: inventory_movements

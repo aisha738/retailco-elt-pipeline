@@ -1,0 +1,56 @@
+[2026-06-01T05:19:06.080+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-01T05:19:06.123+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retailco_master_pipeline.extract_erp_to_lake scheduled__2026-05-31T00:00:00+00:00 [queued]>
+[2026-06-01T05:19:06.132+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retailco_master_pipeline.extract_erp_to_lake scheduled__2026-05-31T00:00:00+00:00 [queued]>
+[2026-06-01T05:19:06.133+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 3
+[2026-06-01T05:19:06.150+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): extract_erp_to_lake> on 2026-05-31 00:00:00+00:00
+[2026-06-01T05:19:06.155+0000] {standard_task_runner.py:63} INFO - Started process 5016 to run task
+[2026-06-01T05:19:06.161+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'retailco_master_pipeline', 'extract_erp_to_lake', 'scheduled__2026-05-31T00:00:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/retailco_dag.py', '--cfg-path', '/tmp/tmpkpnmnanp']
+[2026-06-01T05:19:06.165+0000] {standard_task_runner.py:91} INFO - Job 33: Subtask extract_erp_to_lake
+[2026-06-01T05:19:06.279+0000] {task_command.py:426} INFO - Running <TaskInstance: retailco_master_pipeline.extract_erp_to_lake scheduled__2026-05-31T00:00:00+00:00 [running]> on host 9f8f7458f75c
+[2026-06-01T05:19:06.401+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineering_team' AIRFLOW_CTX_DAG_ID='retailco_master_pipeline' AIRFLOW_CTX_TASK_ID='extract_erp_to_lake' AIRFLOW_CTX_EXECUTION_DATE='2026-05-31T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-31T00:00:00+00:00'
+[2026-06-01T05:19:06.402+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-01T05:19:06.417+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-06-01T05:19:06.419+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/extractor.py']
+[2026-06-01T05:19:06.431+0000] {subprocess.py:86} INFO - Output:
+[2026-06-01T05:19:06.919+0000] {subprocess.py:93} INFO - 2026-06-01 05:19:06,918 - INFO - Incremental run: Fetching data updated after 2026-05-31T21:03:19.922324
+[2026-06-01T05:19:06.919+0000] {subprocess.py:93} INFO - 2026-06-01 05:19:06,919 - INFO - Starting extraction for /customers...
+[2026-06-01T05:19:06.938+0000] {subprocess.py:93} INFO - 2026-06-01 05:19:06,937 - WARNING - Network error: HTTPSConnectionPool(host='hngstage8da-55c7f5f769c8.herokuapp.com', port=443): Max retries exceeded with url: /customers?updated_after=2026-05-31T21%3A03%3A19.922324 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d6c9c52f750>: Failed to establish a new connection: [Errno -2] Name or service not known')). Retrying in 1s...
+[2026-06-01T05:19:07.947+0000] {subprocess.py:93} INFO - 2026-06-01 05:19:07,946 - WARNING - Network error: HTTPSConnectionPool(host='hngstage8da-55c7f5f769c8.herokuapp.com', port=443): Max retries exceeded with url: /customers?updated_after=2026-05-31T21%3A03%3A19.922324 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d6c9c52f750>: Failed to establish a new connection: [Errno -2] Name or service not known')). Retrying in 2s...
+[2026-06-01T05:19:09.956+0000] {subprocess.py:93} INFO - 2026-06-01 05:19:09,956 - WARNING - Network error: HTTPSConnectionPool(host='hngstage8da-55c7f5f769c8.herokuapp.com', port=443): Max retries exceeded with url: /customers?updated_after=2026-05-31T21%3A03%3A19.922324 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d6c9c52f810>: Failed to establish a new connection: [Errno -2] Name or service not known')). Retrying in 4s...
+[2026-06-01T05:19:13.966+0000] {subprocess.py:93} INFO - 2026-06-01 05:19:13,966 - WARNING - Network error: HTTPSConnectionPool(host='hngstage8da-55c7f5f769c8.herokuapp.com', port=443): Max retries exceeded with url: /customers?updated_after=2026-05-31T21%3A03%3A19.922324 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d6c9c52f650>: Failed to establish a new connection: [Errno -2] Name or service not known')). Retrying in 8s...
+[2026-06-01T05:19:21.986+0000] {subprocess.py:93} INFO - 2026-06-01 05:19:21,986 - WARNING - Network error: HTTPSConnectionPool(host='hngstage8da-55c7f5f769c8.herokuapp.com', port=443): Max retries exceeded with url: /customers?updated_after=2026-05-31T21%3A03%3A19.922324 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d6c9c52f650>: Failed to establish a new connection: [Errno -2] Name or service not known')). Retrying in 16s...
+[2026-06-01T05:19:37.982+0000] {subprocess.py:93} INFO - 
+[2026-06-01T05:19:37.983+0000] {subprocess.py:93} INFO - --- Starting Full Lake Extraction ---
+[2026-06-01T05:19:37.984+0000] {subprocess.py:93} INFO - 
+[2026-06-01T05:19:37.985+0000] {subprocess.py:93} INFO - --- Processing customers ---
+[2026-06-01T05:19:37.986+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-06-01T05:19:37.986+0000] {subprocess.py:93} INFO -   File "/opt/***/extractor.py", line 249, in <module>
+[2026-06-01T05:19:37.987+0000] {subprocess.py:93} INFO -     new_data = fetch_all_pages(endpoint, updated_after=last_run_time)
+[2026-06-01T05:19:37.988+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-01T05:19:37.989+0000] {subprocess.py:93} INFO -   File "/opt/***/extractor.py", line 118, in fetch_all_pages
+[2026-06-01T05:19:37.991+0000] {subprocess.py:93} INFO -     response_data = make_robust_request(url, params=params)
+[2026-06-01T05:19:37.992+0000] {subprocess.py:93} INFO -                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-01T05:19:37.992+0000] {subprocess.py:93} INFO -   File "/opt/***/extractor.py", line 98, in make_robust_request
+[2026-06-01T05:19:37.994+0000] {subprocess.py:93} INFO -     raise Exception(f"Max retries exceeded for URL: {url}")
+[2026-06-01T05:19:37.995+0000] {subprocess.py:93} INFO - Exception: Max retries exceeded for URL: https://hngstage8da-55c7f5f769c8.herokuapp.com/customers
+[2026-06-01T05:19:38.021+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-06-01T05:19:38.023+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-01T05:19:38.037+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-06-01T05:19:38.042+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=retailco_master_pipeline, task_id=extract_erp_to_lake, run_id=scheduled__2026-05-31T00:00:00+00:00, execution_date=20260531T000000, start_date=20260601T051906, end_date=20260601T051938
+[2026-06-01T05:19:38.058+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 33 for task extract_erp_to_lake (Bash command failed. The command returned a non-zero exit code 1.; 5016)
+[2026-06-01T05:19:38.082+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-06-01T05:19:38.112+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-01T05:19:38.115+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

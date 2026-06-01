@@ -1,0 +1,11 @@
+retailco_models:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: 127.0.0.1
+      port: 5434
+      user: dwh_admin
+      password: dwh_password
+      dbname: retailco_dwh
+      schema: public

@@ -1,0 +1,59 @@
+[2026-05-31T15:55:52.520+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-31T15:55:52.564+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retailco_master_pipeline.load_lake_to_warehouse manual__2026-05-31T15:55:29.897550+00:00 [queued]>
+[2026-05-31T15:55:52.573+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retailco_master_pipeline.load_lake_to_warehouse manual__2026-05-31T15:55:29.897550+00:00 [queued]>
+[2026-05-31T15:55:52.575+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-31T15:55:52.592+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): load_lake_to_warehouse> on 2026-05-31 15:55:29.897550+00:00
+[2026-05-31T15:55:52.598+0000] {standard_task_runner.py:63} INFO - Started process 1360 to run task
+[2026-05-31T15:55:52.602+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'retailco_master_pipeline', 'load_lake_to_warehouse', 'manual__2026-05-31T15:55:29.897550+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/retailco_dag.py', '--cfg-path', '/tmp/tmpfdto5ckx']
+[2026-05-31T15:55:52.604+0000] {standard_task_runner.py:91} INFO - Job 19: Subtask load_lake_to_warehouse
+[2026-05-31T15:55:52.696+0000] {task_command.py:426} INFO - Running <TaskInstance: retailco_master_pipeline.load_lake_to_warehouse manual__2026-05-31T15:55:29.897550+00:00 [running]> on host 9f8f7458f75c
+[2026-05-31T15:55:52.818+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineering_team' AIRFLOW_CTX_DAG_ID='retailco_master_pipeline' AIRFLOW_CTX_TASK_ID='load_lake_to_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2026-05-31T15:55:29.897550+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-31T15:55:29.897550+00:00'
+[2026-05-31T15:55:52.819+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-31T15:55:52.833+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-31T15:55:52.835+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/loader.py']
+[2026-05-31T15:55:52.844+0000] {subprocess.py:86} INFO - Output:
+[2026-05-31T15:55:56.862+0000] {subprocess.py:93} INFO - 2026-05-31 15:55:56,861 - INFO - Reading the config from /opt/***/***.cfg
+[2026-05-31T15:55:57.406+0000] {subprocess.py:93} INFO - 2026-05-31 15:55:57,406 - INFO - Configured default timezone UTC
+[2026-05-31T15:56:01.427+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:01.428+0000] {subprocess.py:93} INFO - --- Starting Full dlt Warehouse Load ---
+[2026-05-31T15:56:01.428+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:01.429+0000] {subprocess.py:93} INFO - Extracting 'customers' from Lake and loading to Warehouse...
+[2026-05-31T15:56:01.429+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:01.427+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: customers securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:01.922+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:01.922+0000] {subprocess.py:93} INFO - Extracting 'products' from Lake and loading to Warehouse...
+[2026-05-31T15:56:01.923+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:01.921+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: products securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:02.273+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:02.274+0000] {subprocess.py:93} INFO - Extracting 'stores' from Lake and loading to Warehouse...
+[2026-05-31T15:56:02.275+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:02.273+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: stores securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:02.627+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:02.628+0000] {subprocess.py:93} INFO - Extracting 'employees' from Lake and loading to Warehouse...
+[2026-05-31T15:56:02.628+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:02.627+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: employees securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:03.042+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:03.042+0000] {subprocess.py:93} INFO - Extracting 'payment_methods' from Lake and loading to Warehouse...
+[2026-05-31T15:56:03.043+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:03.041+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: payment_methods securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:03.219+0000] {subprocess.py:93} INFO - 2026-05-31 15:56:03,218|[WARNING]|1361|135966993983296|dlt|validate.py|verify_normalized_table:113|In schema `retailco_warehouse`: The following columns in table 'orders' did not receive any data during this load and therefore could not have their types inferred:
+[2026-05-31T15:56:03.219+0000] {subprocess.py:93} INFO -   - delivered_at
+[2026-05-31T15:56:03.220+0000] {subprocess.py:93} INFO -   - shipped_at
+[2026-05-31T15:56:03.221+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:03.221+0000] {subprocess.py:93} INFO - Unless type hints are provided, these columns will not be materialized in the destination.
+[2026-05-31T15:56:03.222+0000] {subprocess.py:93} INFO - One way to provide type hints is to use the 'columns' argument in the '@dlt.resource' decorator.  For example:
+[2026-05-31T15:56:03.222+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:03.223+0000] {subprocess.py:93} INFO - @dlt.resource(columns={'delivered_at': {'data_type': 'text'}})
+[2026-05-31T15:56:03.223+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:03.389+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:03.390+0000] {subprocess.py:93} INFO - Extracting 'orders' from Lake and loading to Warehouse...
+[2026-05-31T15:56:03.390+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:03.389+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: orders securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:03.875+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:03.875+0000] {subprocess.py:93} INFO - Extracting 'payments' from Lake and loading to Warehouse...
+[2026-05-31T15:56:03.876+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:03.875+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: payments securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:04.210+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:04.211+0000] {subprocess.py:93} INFO - Extracting 'inventory_movements' from Lake and loading to Warehouse...
+[2026-05-31T15:56:04.212+0000] {subprocess.py:93} INFO - [[34m2026-05-31T15:56:04.210+0000[0m] {[34mloader.py:[0m83} INFO[0m - SUCCESS: inventory_movements securely loaded to the Data Warehouse.[0m
+[2026-05-31T15:56:04.212+0000] {subprocess.py:93} INFO - 
+[2026-05-31T15:56:04.213+0000] {subprocess.py:93} INFO - --- CHECKPOINT 3 COMPLETE: All tables loaded into the Analytics Warehouse! ---
+[2026-05-31T15:56:08.142+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-31T15:56:08.144+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-31T15:56:08.185+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=retailco_master_pipeline, task_id=load_lake_to_warehouse, run_id=manual__2026-05-31T15:55:29.897550+00:00, execution_date=20260531T155529, start_date=20260531T155552, end_date=20260531T155608
+[2026-05-31T15:56:08.525+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-31T15:56:08.558+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-31T15:56:08.562+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

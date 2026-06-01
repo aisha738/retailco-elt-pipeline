@@ -1,0 +1,83 @@
+[2026-05-31T20:13:39.147+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-31T20:13:39.550+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: retailco_master_pipeline.extract_erp_to_lake manual__2026-05-31T20:13:33.267598+00:00 [queued]>
+[2026-05-31T20:13:39.582+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: retailco_master_pipeline.extract_erp_to_lake manual__2026-05-31T20:13:33.267598+00:00 [queued]>
+[2026-05-31T20:13:39.583+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-31T20:13:39.643+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): extract_erp_to_lake> on 2026-05-31 20:13:33.267598+00:00
+[2026-05-31T20:13:39.675+0000] {standard_task_runner.py:63} INFO - Started process 3902 to run task
+[2026-05-31T20:13:39.683+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'retailco_master_pipeline', 'extract_erp_to_lake', 'manual__2026-05-31T20:13:33.267598+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/retailco_dag.py', '--cfg-path', '/tmp/tmpa05nejrv']
+[2026-05-31T20:13:39.690+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask extract_erp_to_lake
+[2026-05-31T20:13:39.853+0000] {task_command.py:426} INFO - Running <TaskInstance: retailco_master_pipeline.extract_erp_to_lake manual__2026-05-31T20:13:33.267598+00:00 [running]> on host 9f8f7458f75c
+[2026-05-31T20:13:40.170+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineering_team' AIRFLOW_CTX_DAG_ID='retailco_master_pipeline' AIRFLOW_CTX_TASK_ID='extract_erp_to_lake' AIRFLOW_CTX_EXECUTION_DATE='2026-05-31T20:13:33.267598+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-31T20:13:33.267598+00:00'
+[2026-05-31T20:13:40.174+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-31T20:13:40.315+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-31T20:13:40.326+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/extractor.py']
+[2026-05-31T20:13:40.363+0000] {subprocess.py:86} INFO - Output:
+[2026-05-31T20:13:42.862+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:42,861 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:37.628338
+[2026-05-31T20:13:42.863+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:42,862 - INFO - Starting extraction for /customers...
+[2026-05-31T20:13:45.332+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:45,328 - INFO - Finished /customers. Total records: 50
+[2026-05-31T20:13:45.392+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:45,391 - INFO - Successfully saved 50 records to raw.customers
+[2026-05-31T20:13:45.393+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:45,391 - INFO - Watermark for customers updated to 2026-05-31T20:13:45.335791+00:00
+[2026-05-31T20:13:45.394+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:45,393 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:39.077039
+[2026-05-31T20:13:45.395+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:45,393 - INFO - Starting extraction for /products...
+[2026-05-31T20:13:46.743+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:46,742 - INFO - Finished /products. Total records: 0
+[2026-05-31T20:13:46.745+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:46,743 - INFO - No new data to save for products.
+[2026-05-31T20:13:46.746+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:46,744 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:40.293894
+[2026-05-31T20:13:46.747+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:46,745 - INFO - Starting extraction for /stores...
+[2026-05-31T20:13:48.074+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:48,073 - INFO - Finished /stores. Total records: 4
+[2026-05-31T20:13:48.086+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:48,085 - INFO - Successfully saved 4 records to raw.stores
+[2026-05-31T20:13:48.087+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:48,086 - INFO - Watermark for stores updated to 2026-05-31T20:13:48.074949+00:00
+[2026-05-31T20:13:48.088+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:48,087 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:41.743590
+[2026-05-31T20:13:48.089+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:48,087 - INFO - Starting extraction for /employees...
+[2026-05-31T20:13:49.525+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:49,522 - INFO - Finished /employees. Total records: 0
+[2026-05-31T20:13:49.527+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:49,524 - INFO - No new data to save for employees.
+[2026-05-31T20:13:49.529+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:49,526 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:42.975812
+[2026-05-31T20:13:49.531+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:49,527 - INFO - Starting extraction for /payment_methods...
+[2026-05-31T20:13:51.153+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:51,152 - INFO - Finished /payment_methods. Total records: 5
+[2026-05-31T20:13:51.167+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:51,166 - INFO - Successfully saved 5 records to raw.payment_methods
+[2026-05-31T20:13:51.168+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:51,167 - INFO - Watermark for payment_methods updated to 2026-05-31T20:13:51.154629+00:00
+[2026-05-31T20:13:51.170+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:51,168 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:44.896796
+[2026-05-31T20:13:51.171+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:51,169 - INFO - Starting extraction for /orders...
+[2026-05-31T20:13:53.218+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:53,215 - INFO - Finished /orders. Total records: 50
+[2026-05-31T20:13:53.267+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:53,266 - INFO - Successfully saved 50 records to raw.orders
+[2026-05-31T20:13:53.270+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:53,267 - INFO - Watermark for orders updated to 2026-05-31T20:13:53.223820+00:00
+[2026-05-31T20:13:53.272+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:53,269 - INFO - First run: Performing full historical extract.
+[2026-05-31T20:13:53.275+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:53,270 - INFO - Starting extraction for /order_items...
+[2026-05-31T20:13:54.925+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:54,924 - INFO - Finished /order_items. Total records: 50
+[2026-05-31T20:13:55.065+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:55,065 - INFO - Successfully saved 50 records to raw.order_items
+[2026-05-31T20:13:55.069+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:55,065 - INFO - Watermark for order_items updated to 2026-05-31T20:13:55.045511+00:00
+[2026-05-31T20:13:55.071+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:55,069 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:46.547213
+[2026-05-31T20:13:55.073+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:55,069 - INFO - Starting extraction for /payments...
+[2026-05-31T20:13:56.338+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:56,336 - INFO - Finished /payments. Total records: 0
+[2026-05-31T20:13:56.341+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:56,338 - INFO - No new data to save for payments.
+[2026-05-31T20:13:56.345+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:56,341 - INFO - Incremental run: Fetching data updated after 2026-05-31T15:55:47.923785
+[2026-05-31T20:13:56.347+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:56,341 - INFO - Starting extraction for /inventory_movements...
+[2026-05-31T20:13:57.761+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:57,760 - INFO - Finished /inventory_movements. Total records: 0
+[2026-05-31T20:13:57.762+0000] {subprocess.py:93} INFO - 2026-05-31 20:13:57,761 - INFO - No new data to save for inventory_movements.
+[2026-05-31T20:13:57.763+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.764+0000] {subprocess.py:93} INFO - --- Starting Full Lake Extraction ---
+[2026-05-31T20:13:57.766+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.768+0000] {subprocess.py:93} INFO - --- Processing customers ---
+[2026-05-31T20:13:57.769+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.770+0000] {subprocess.py:93} INFO - --- Processing products ---
+[2026-05-31T20:13:57.771+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.772+0000] {subprocess.py:93} INFO - --- Processing stores ---
+[2026-05-31T20:13:57.772+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.773+0000] {subprocess.py:93} INFO - --- Processing employees ---
+[2026-05-31T20:13:57.774+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.774+0000] {subprocess.py:93} INFO - --- Processing payment_methods ---
+[2026-05-31T20:13:57.775+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.776+0000] {subprocess.py:93} INFO - --- Processing orders ---
+[2026-05-31T20:13:57.777+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.777+0000] {subprocess.py:93} INFO - --- Processing order_items ---
+[2026-05-31T20:13:57.778+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.779+0000] {subprocess.py:93} INFO - --- Processing payments ---
+[2026-05-31T20:13:57.780+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.780+0000] {subprocess.py:93} INFO - --- Processing inventory_movements ---
+[2026-05-31T20:13:57.781+0000] {subprocess.py:93} INFO - 
+[2026-05-31T20:13:57.782+0000] {subprocess.py:93} INFO - SUCCESS: All entities safely written to the Data Lake!
+[2026-05-31T20:13:57.815+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-31T20:13:57.822+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-31T20:13:57.904+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=retailco_master_pipeline, task_id=extract_erp_to_lake, run_id=manual__2026-05-31T20:13:33.267598+00:00, execution_date=20260531T201333, start_date=20260531T201339, end_date=20260531T201357
+[2026-05-31T20:14:00.488+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-31T20:14:00.561+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-31T20:14:00.566+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
