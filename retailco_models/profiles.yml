@@ -4,7 +4,7 @@ retailco_models:
     dev:
       type: postgres
       host: 127.0.0.1
-      port: 5434
+      port: 5432
       user: dwh_admin
       password: dwh_password
       dbname: retailco_dwh
