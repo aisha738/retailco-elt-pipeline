@@ -1,11 +1,12 @@
-retailco_models:
-  target: dev
+retailco_project:
   outputs:
     dev:
       type: postgres
-      host: 127.0.0.1
-      port: 5432
+      threads: 1
+      host: data-warehouse
+      port: 5432               
       user: dwh_admin
-      password: dwh_password
+      pass: dwh_password
       dbname: retailco_dwh
       schema: public
+  target: dev
