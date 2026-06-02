@@ -53,7 +53,7 @@ with DAG(
     # 5. DBT MARTS
     task_dbt_marts = BashOperator(
         task_id='dbt_run_marts',
-        bash_command='cd /opt/airflow/retailco_models && dbt run --select marts --profiles-dir .',
+        bash_command='cd /opt/airflow/retailco_models && dbt run --select marts --full-refresh --profiles-dir .',
     )
 
     # 6. DBT TEST
