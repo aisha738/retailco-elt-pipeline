@@ -10,6 +10,12 @@ order_items as (
 
 final as (
     select
+        {{ dbt_utils.generate_surrogate_key(['oi.order_item_id']) }} as sales_sk,
+        {{ dbt_utils.generate_surrogate_key(['o.customer_id']) }} as customer_sk,
+        {{ dbt_utils.generate_surrogate_key(['o.store_id']) }} as store_sk,
+        {{ dbt_utils.generate_surrogate_key(['o.employee_id']) }} as employee_sk,
+        {{ dbt_utils.generate_surrogate_key(['oi.product_id']) }} as product_sk,
+        -- Keep your existing fields
         oi.order_item_id,
         o.order_id,
         o.customer_id,
