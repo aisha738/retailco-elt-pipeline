@@ -38,30 +38,29 @@ with DAG(
         bash_command='python /opt/airflow/loader.py',
     )
 
-    # 3. DBT SNAPSHOT (SCD2 History)
+# 3. DBT SNAPSHOT (SCD2 History)
     task_dbt_snapshot = BashOperator(
         task_id='dbt_snapshot_dimensions',
-        bash_command='cd /opt/airflow/retailco_models && dbt snapshot',
+        bash_command='cd /opt/airflow/retailco_models && dbt snapshot --profiles-dir .',
     )
 
     # 4. DBT STAGING
     task_dbt_staging = BashOperator(
         task_id='dbt_run_staging',
-        bash_command='cd /opt/airflow/retailco_models && dbt run --select staging',
+        bash_command='cd /opt/airflow/retailco_models && dbt run --select staging --profiles-dir .',
     )
 
     # 5. DBT MARTS
     task_dbt_marts = BashOperator(
         task_id='dbt_run_marts',
-        bash_command='cd /opt/airflow/retailco_models && dbt run --select marts',
+        bash_command='cd /opt/airflow/retailco_models && dbt run --select marts --profiles-dir .',
     )
 
     # 6. DBT TEST
     task_dbt_test = BashOperator(
         task_id='dbt_test_quality',
-        bash_command='cd /opt/airflow/retailco_models && dbt test',
+        bash_command='cd /opt/airflow/retailco_models && dbt test --profiles-dir .',
     )
-
     # Define the exact dependency sequence requested by the brief
     # The bitshift operator (>>) tells Airflow: "Task A must succeed before Task B starts"
     task_extract >> task_load >> task_dbt_snapshot >> task_dbt_staging >> task_dbt_marts >> task_dbt_test
