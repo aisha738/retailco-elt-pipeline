@@ -1,4 +1,4 @@
-retailco_project:
+retailco_models:
   outputs:
     dev:
       type: postgres
