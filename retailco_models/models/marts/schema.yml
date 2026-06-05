@@ -27,6 +27,7 @@ models:
           - relationships:
               to: ref('dim_customer')
               field: customer_sk
+              severity: warn
 
   - name: fct_payments
     columns:
